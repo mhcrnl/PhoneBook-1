@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
-#include <windows.h>
+//#include <conio.h>
+//#include <windows.h>
 
 void Create();
 void Load();
@@ -109,14 +109,14 @@ int main()
         }
         // Screen Cleaner
         printf("Press any key to Continue\n");
-        getch();
+        //getch();
         system("cls");
         printf("                        Welcome to the Phone-Book\n");
         //Give the User a list of operation he can use
         printf("Operations you can use:\n");
         printf("1.Load\n2.Query\n3.Add\n4.Delete\n5.Modify\n6.Print\n7.Save\n8.Quit\n");
     }
-    Sleep(1500);
+//    Sleep(1500);
     return 0;
 }
 
