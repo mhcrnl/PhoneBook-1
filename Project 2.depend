@@ -6,3 +6,21 @@
 	<conio.h>
 	<windows.h>
 
+1503103671 source:/home/mhcrnl/Documents/C/PhoneBook-1/tinyfiledialogs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<sys/stat.h>
+	"tinyfiledialogs.h"
+	<Windows.h>
+	<Shlobj.h>
+	<conio.h>
+	<limits.h>
+	<unistd.h>
+	<dirent.h>
+	<termios.h>
+	<sys/utsname.h>
+
+1503103671 /home/mhcrnl/Documents/C/PhoneBook-1/tinyfiledialogs.h
+

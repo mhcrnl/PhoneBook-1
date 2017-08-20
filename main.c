@@ -3,8 +3,14 @@
 #include <string.h>
 //#include <conio.h>
 //#include <windows.h>
+//
+#include "tinyfiledialogs.h"
 
 void Create();
+/** --------------------------------------------------------------
+    Functia Create01() cu tinyfiledialog
+*/
+int Create01();
 void Load();
 int Query(char Search[20]);
 void Add();
@@ -37,7 +43,7 @@ int main()
         printf("Choose to (1)Create a file or to (2)Load a file: ");
         scanf("%s",operation);
         if(strcmp(operation,"Create")==0||strcmp(operation,"create")==0||strcmp(operation,"1")==0){
-            Create();
+            Create01();
             break;
         }else if(strcmp(operation,"Load")==0||strcmp(operation,"load")==0||strcmp(operation,"2")==0){
             Load();
@@ -128,6 +134,42 @@ void Create(){
     file=fopen(filename,"w");
     printf("                             File Created\n");
     fclose(file);
+}
+/**
+    Functia Create01() cu tinyfiledialog
+*/
+int Create01(){
+    FILE *file;
+    char const * lFilterPatterns[2] = { "*.txt", "*.text" };
+    char const* filename = tinyfd_saveFileDialog(
+		"let us save this password",
+		"passwordFile.txt",
+		2,
+		lFilterPatterns,
+		NULL);
+    if (! filename)
+	{
+		tinyfd_messageBox(
+			"Error",
+			"Save file name is NULL",
+			"ok",
+			"error",
+			1);
+		return 1 ;
+	}
+	file = fopen(filename, "w");
+	if (!file)
+	{
+		tinyfd_messageBox(
+			"Error",
+			"Can not open this file in write mode",
+			"ok",
+			"error",
+			1);
+		return 1 ;
+	}
+	//fputs(lThePassword, lIn);
+	fclose(file);
 }
 
 void Load(){
